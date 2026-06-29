@@ -1,20 +1,20 @@
 class Nsql < Formula
   desc "Run SQL from your terminal, composed in your real neovim — without taking over the screen."
   homepage "https://github.com/fredrir/nsql"
-  version "0.1.1"
+  version "0.1.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/fredrir/nsql/releases/download/v0.1.1/nsql-aarch64-apple-darwin.tar.xz"
-      sha256 "c7e3ee5648de5878d40319c63617abb49612c3f4d7472b57374fabc08669ddca"
+      url "https://github.com/fredrir/nsql/releases/download/v0.1.2/nsql-aarch64-apple-darwin.tar.xz"
+      sha256 "e8bad38c13c35201b1b7a0a82f6e066cff37f5275e836621163c763fd3a3e160"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fredrir/nsql/releases/download/v0.1.1/nsql-x86_64-apple-darwin.tar.xz"
-      sha256 "76c0bd46f31de04a65c9e75f03df5c04cadf0e298a33345b441a5cbd723e4cdd"
+      url "https://github.com/fredrir/nsql/releases/download/v0.1.2/nsql-x86_64-apple-darwin.tar.xz"
+      sha256 "62b07a336d4b9e4ddfd8e7ab91305e207b4ae50c8877cff50ff81a0d6fd6f39a"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/fredrir/nsql/releases/download/v0.1.1/nsql-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "4f7d78ddfb8b43e18ca9d5ed304edf67d116804557244d5a2edbc87c3ae839e1"
+    url "https://github.com/fredrir/nsql/releases/download/v0.1.2/nsql-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "412337d56d7b2fa390fe2ce2d1f8ab5ec7fcfc93a4ef42cff84726df3a78b1e0"
   end
   license "0BSD"
 
