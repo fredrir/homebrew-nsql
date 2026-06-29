@@ -1,4 +1,5 @@
 class Nsql < Formula
+  depends_on "dbus" if OS.linux?
   desc "Run SQL from your terminal, composed in your real neovim — without taking over the screen."
   homepage "https://github.com/fredrir/nsql"
   version "0.1.2"
