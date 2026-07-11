@@ -1,28 +1,34 @@
 class Nsql < Formula
-  depends_on "dbus" if OS.linux?
   desc "Run SQL from your terminal, composed in your real neovim — without taking over the screen."
   homepage "https://github.com/fredrir/nsql"
-  version "0.1.3"
+  version "0.1.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/fredrir/nsql/releases/download/v0.1.3/nsql-aarch64-apple-darwin.tar.xz"
-      sha256 "42af36f298f8ddee7a6a2919846d9d0d69f29dd55830d1eaea01caa36a65362b"
+      url "https://github.com/fredrir/nsql/releases/download/v0.1.4/nsql-aarch64-apple-darwin.tar.xz"
+      sha256 "2c99401b18523bfda8e50aa141270ddf75addb75be567f552dbdc92015675724"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fredrir/nsql/releases/download/v0.1.3/nsql-x86_64-apple-darwin.tar.xz"
-      sha256 "616a1ae8a48264bc2654e0b15092139482b72b7134976b418d59df31d0fee0c7"
+      url "https://github.com/fredrir/nsql/releases/download/v0.1.4/nsql-x86_64-apple-darwin.tar.xz"
+      sha256 "6c6041602c92369e2b3bba357ed4cef9a33ff5d0af710943fe7ace2bf7d46c25"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/fredrir/nsql/releases/download/v0.1.3/nsql-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "1b676db4b34765e9cd51b1191f72554f0e1556f2d4d1d231c0873b4476053d16"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/fredrir/nsql/releases/download/v0.1.4/nsql-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8536bf9e8cf4f36b71e592eb69b297b40a01050e14c1732f595dd9776a9998f7"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/fredrir/nsql/releases/download/v0.1.4/nsql-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "3bdf90c85ad15d5795fd5f6b51c6acb6c9ff112d83970a4d0329c594c94b3ce6"
+    end
   end
   license "0BSD"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -43,6 +49,7 @@ class Nsql < Formula
   def install
     bin.install "nsql" if OS.mac? && Hardware::CPU.arm?
     bin.install "nsql" if OS.mac? && Hardware::CPU.intel?
+    bin.install "nsql" if OS.linux? && Hardware::CPU.arm?
     bin.install "nsql" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
