@@ -7,7 +7,7 @@ claim_pattern:
   ref: ^refs/heads/main$
   event_name: ^(push|schedule|workflow_dispatch)$
   environment: ^publish$
-  job_workflow_ref: ^fredrir/infra/\.github/workflows/packages-publish\.yml@(a57b0e15d5ca1c3180fba6a16cedbc7595e90610|cbbf64f0b9a383894e8f4c329d64b996260433c0)$
-  job_workflow_sha: ^(a57b0e15d5ca1c3180fba6a16cedbc7595e90610|cbbf64f0b9a383894e8f4c329d64b996260433c0)$
+  job_workflow_ref: ^fredrir/infra/\.github/workflows/packages-publish\.yml@(607c305882e59a3ebbd70422a818594a98a50845|cbbf64f0b9a383894e8f4c329d64b996260433c0)$
+  job_workflow_sha: ^(607c305882e59a3ebbd70422a818594a98a50845|cbbf64f0b9a383894e8f4c329d64b996260433c0)$
 permissions:
   contents: write
